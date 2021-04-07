@@ -22,19 +22,19 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 ```
 ### 属性说明
 
-**expires** => 值为GMT时间字符表示过期的日期点，可以设置该值为过去日期来删除该cookie<br>
+- **expires** => 值为GMT时间字符表示过期的日期点，可以设置该值为过去日期来删除该cookie<br>
 
-**maxage** => 值为未来的时间长度，单位为S，表示过期的时间长度<br>
+- **maxage** => 值为未来的时间长度，单位为S，表示过期的时间长度<br>
 
-**path** => 限制cookie在该路径下，只能在该路径下才能发送<br>
+- **path** => 限制cookie在该路径下，只能在该路径下才能发送<br>
 
-**domain** => 限制cookie在该域下，可以在该域和子域下发送，如果没有设置则只在该域下发送<br>
+- **domain** => 限制cookie在该域下，可以在该域和子域下发送，如果没有设置则只在该域下发送<br>
 
-**secure** => 限制只能在https下加密传输<br>
+- **secure** => 限制只能在https下加密传输<br>
 
-**samesite** => 控制跨域下请求是否发送cookie,有三个值，分别为none(可以),strict（只在同域下发送站点）,lax（和strict差不多，不过只能通过link这种外部导航方式进入才会发送），默认为lax<br>
+- **samesite** => 控制跨域下请求是否发送cookie,有三个值，分别为none(可以),strict（只在同域下发送站点）,lax（和strict差不多，不过只能通过link这种外部导航方式进入才会发送），默认为lax<br>
 
-**httponly** => 只通过http暴露cookie,这就表示不能通过js脚本document.cookie设置和访问<br>
+- **httponly** => 只通过http暴露cookie,这就表示不能通过js脚本document.cookie设置和访问<br>
 
 ### 注意事项
 `1. 没有设置expires或者maxage则默认为会话cookie，浏览器关闭之后则消失，反之为持久cookie`<br>
