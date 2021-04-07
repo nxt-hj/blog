@@ -64,5 +64,5 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 **2.控制执行**
 
 - 在输出时先对内容（来自url参数或者ajax）进行转义如（ & < > " ' / javascript:）
-- 减少使用eval()、setTimeout()、setInterval()、innerHTML、document.write()等可以执行字符串的代码
+- 注意使用eval()、setTimeout()、setInterval()、innerHTML、document.write()等可以执行字符串的代码
 - 由服务端通过Set-Cookie设置httponly，使document.cookie无法获取
