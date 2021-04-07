@@ -38,9 +38,13 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 
 #### 注意事项
 `1. 没有设置expires或者maxage则默认为会话cookie，浏览器关闭之后则消失，反之为持久cookie`<br>
+
 `2. 没有设置domain或者path则默认只能在当前域或路径下传送cookie`<br>
+
 `3. 删除时，domain和path需要该cookie一致`<br>
+
 `4. httponly只能通过服务端Set-Cookie设置`<br>
+
 `5. 同源策略-不能设置和获取其他域的cookie`<br>
 ## Cookie安全
 ### SessionHijacking（会话劫持）
