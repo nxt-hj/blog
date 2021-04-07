@@ -20,7 +20,7 @@ Set-Cookie: sessionToken=abc123; Expires=Wed, 09 Jun 2021 10:18:14 GMT; httponly
 ```js
 document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; path=/; domain=xxx.com; secure;samesite=strict'
 ```
-### 属性说明
+#### 属性说明
 
 - **expires** => 值为GMT时间字符表示过期的日期点，可以设置该值为过去日期来删除该cookie<br>
 
@@ -36,9 +36,10 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 
 - **httponly** => 只通过http暴露cookie,这就表示不能通过js脚本document.cookie设置和访问<br>
 
-### 注意事项
+#### 注意事项
 `1. 没有设置expires或者maxage则默认为会话cookie，浏览器关闭之后则消失，反之为持久cookie`<br>
 `2. 没有设置domain或者path则默认只能在当前域或路径下传送cookie`<br>
 `3. 删除cookie时，domain和path需要一致`<br>
 `4. httponly只能通过服务端Set-Cookie设置`<br>
 ## Cookie安全
+#### 会话劫持
