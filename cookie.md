@@ -37,10 +37,11 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 - **httponly** => 只通过http暴露cookie,这就表示不能通过js脚本document.cookie设置和访问<br>
 
 #### 注意事项
-`1. 没有设置expires或者maxage则默认为会话cookie，浏览器关闭之后则消失，反之为持久cookie`<br>
-`2. 没有设置domain或者path则默认只能在当前域或路径下传送cookie`<br>
-`3. 删除时，domain和path需要该cookie一致`<br>
-`4. httponly只能通过服务端Set-Cookie设置`<br>
+`1. 没有设置expires或者maxage则默认为会话cookie，浏览器关闭之后则消失，反之为持久cookie`
+`2. 没有设置domain或者path则默认只能在当前域或路径下传送cookie`
+`3. 删除时，domain和path需要该cookie一致`
+`4. httponly只能通过服务端Set-Cookie设置`
+`5. 同源策略-不能设置和获取其他域的cookie`
 ## Cookie安全
 ### SessionHijacking（会话劫持）
 在客户端和服务端之间进行cookie的传输时，网络上的流量可以被发送方以外的网络上的计算机拦截和读取，特别是在未加密开放式的wifi上，通过拦截到的cookie来冒充用户发起恶意行为<br>
@@ -78,3 +79,4 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 - 通过请求头origin或者referrer验证请求来源，且改用post方式（虽然请求头可以伪造，但是可以抵挡部分伪造和get请求）
 - 不通过cookie进行认证，可添加一个自定义请求头进行认证，其值为动态生成的随机字符串
 - 输入和输出过滤
+- 在请求中添加cookie对应的token，对比请求中的token和cookie是否一致（cookie同源策略-伪造者不能设置和获取其他域的cookie到token中）
