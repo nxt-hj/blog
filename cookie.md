@@ -32,5 +32,10 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 
 **samesite** => 控制跨域下请求是否发送cookie,有三个值，分别为none(可以),strict（只在同域下发送站点）,lax（和strict差不多，不过只能通过link这种外部导航方式进入才会发送），默认为lax<br>
 
-**httponly** => 只通过http暴露cookie,这就表示不能通过js脚本document.cookie设置和访问
+**httponly** => 只通过http暴露cookie,这就表示不能通过js脚本document.cookie设置和访问<br>
+ps:
+1. 没有设置expires或者maxage则默认为会话cookie，浏览器关闭之后则消失，反之为持久cookie
+2. 没有设置domain或者path则默认只能在当前域或路径下传送cookie
+3. 删除cookie时，domain和path需要一致
+4. httponly只能通过服务端Set-Cookie设置
 ## Cookie安全
