@@ -1,2 +1,2 @@
 # blog
-- cookie[./cookie.md]
+- [cookie](./cookie.md)
