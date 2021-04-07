@@ -71,7 +71,7 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 - 注意使用eval()、setTimeout()、setInterval()、innerHTML、document.write()等可以执行字符串的代码
 - 由服务端通过Set-Cookie设置httponly，使document.cookie无法获取
 ### CSRF（跨站请求伪造）
-代表用户在其他地方发起一个伪造的请求，假如在一个没有做输入过滤的论坛上接收到一个消息，该消息为如下代码
+代表用户发起一个伪造的请求，假如在一个没有做输入过滤的论坛上接收到一个消息，该消息为如下代码
 ```html
 <img src="http://bank.com/withdraw?account=you&amount=1000000&for=attacker">
 ```
