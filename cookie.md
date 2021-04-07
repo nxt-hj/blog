@@ -24,7 +24,7 @@ document.cookie='cookieName=cookieValue; expires=Tue, 06 Apr 2021 11:46:35 GMT; 
 
 - **expires** => 值为GMT时间字符表示过期的日期点，可以设置该值为过去日期来删除该cookie<br>
 
-- **maxage** => 值为未来的时间长度，单位为S，表示过期的时间长度<br>
+- **maxage** => 表示过期的时间长度，单位为S<br>
 
 - **path** => 限制cookie在该路径下，只能在该路径下才能发送<br>
 
