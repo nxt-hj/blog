@@ -91,7 +91,6 @@ import style from 'xxx.scss';
 
 @_connect({model,style},({ menu }) => ({ ...menu }))
 class Example extends React.Component{
-  render(){
     render() {
         const { collapsed, dispatch } = this.props;
         return (
@@ -104,11 +103,9 @@ class Example extends React.Component{
             />
         )
     }
-  }
 }
 ```
-- 不使用model和style
-当然你也可以不传model或者style，当做redux的connect来使用
+- 当然你也可以不传model或者style，当做redux的connect来使用
 ```es6
 @_connect(mapStateToProps?: Function,
   mapDispatchToProps?: Function,
