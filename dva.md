@@ -1,7 +1,7 @@
 # 介绍
 在开发过程中，每次都需要编写装载和卸载生命周期去卸载样式style和模型model，为了减少这些重复工作，需要包裹一层高阶组件加入自定义逻辑
 
-# 代码
+# _connect
 注意：基于react，且要使用style-loader和dva(redux+redux-saga)，不使用dva的，可以将model相关代码删除即可，只保留style的自动装载和卸载
 ```es6
 /**connect包裹 */
