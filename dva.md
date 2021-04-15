@@ -84,7 +84,7 @@ const MCCSituation = ({ modules, dispatch,refresh }) => {
 
 export default _connect({ model, style }, ({ MCCSituation: { modules,refresh } }) => ({ modules, refresh }))(MCCSituation)
 ```
-- 类class
+- 类class 装饰器
 ```es6
 import model from 'xxx.model.js';
 import style from 'xxx.scss';
