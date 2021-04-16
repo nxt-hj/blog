@@ -60,7 +60,7 @@
 }
 ```
 ## [prettier](https://prettier.io/docs/en/index.html)
-格式化美化代码的插件，提升阅读性，代码维护起来更方便，个人使用的配置如下
+格式化美化代码的插件，提升阅读性，代码维护起来更方便，需要在[编辑器](https://prettier.io/docs/en/editors.html)中安装插件，个人使用的配置如下
 ```js
 module.exports = {
     trailingComma: 'es5',
@@ -73,3 +73,13 @@ module.exports = {
     arrowParens:'always'
 }
 ```
+## [pretty-quick](https://github.com/azz/pretty-quick)
+可以在你git add之后的代码上通过prettier进行验证和格式化，再commit
+**安装** `npm install --D pretty-quick`
+
+## [husky](https://typicode.github.io/husky/#/)
+可以让你更方便的设置和使用git的钩子
+**安装** npm install --D husky
+
+添加pre-commit钩子，在执行提交操作时，先执行prettier的格式验证并自动修改才能提交
+`npx husky add .husky/pre-commit "npx pretty-quick --staged"`
