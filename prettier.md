@@ -83,6 +83,6 @@ module.exports = {
 
 **安装** `npm install --D husky`<br>
 
-添加pre-commit钩子，在执行提交操作时，先执行prettier的格式验证并自动修改才能提交<br>
+在执行提交操作时，先执行prettier的格式验证并自动修改才能提交，添加pre-commit钩子<br>
 
 `npx husky add .husky/pre-commit "npx pretty-quick --staged"`
