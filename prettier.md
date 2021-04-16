@@ -59,3 +59,18 @@
     ]
 }
 ```
+## [prettier](https://prettier.io/docs/en/index.html)
+一款格式化美化代码的插件，个人使用的配置如下
+```js
+module.exports = {
+    trailingComma: 'es5',
+    tabWidth: 4,
+    semi: false,
+    singleQuote: true,
+    jsxSingleQuote: true,
+    bracketSpacing: true,
+    jsxBracketSameLine: false,
+    arrowParens:'always'
+}
+
+```
