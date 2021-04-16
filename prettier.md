@@ -5,12 +5,26 @@
 ```es6
 "rules": {
     "constructor-super": 2,//在constuctor中必须调用super
-    "no-unused-vars": 2,//不允许定义没有使用的变量
+    "no-unused-vars": 2,//变量未使用
+    "no-undef": 2,//变量未定义
     ...
  }
 ```
-如果代码不满足条件，则抛出错误，如果使用了webpack的ProvidePlugin全局引入，可能直接使用变量eslint会检测报错
-
+如果代码不满足条件，则抛出错误，如果这样一个个去定义，想必非常耗费时间，这时你可以使用extends扩展规则包，eslint自带一个扩展"eslint:recommended",其他则需要通过npm去安装了，通过在rules设置，可以覆盖规则包里的同名规则
+```es6
+"extends": [
+    "react-app",
+    "plugin:jsx-a11y/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended"
+],
+```
+如果使用了webpack的ProvidePlugin全局引入，直接使用全局变量eslint检测到会报错，可以设置globals
+```es6
+"globals": {
+    "globalVariableName":true
+}
+```
 那么现在我们通过eslint-loader把eslint集成到webpack中
 
 **安装**
