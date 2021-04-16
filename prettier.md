@@ -75,10 +75,12 @@ module.exports = {
 ```
 ## [pretty-quick](https://github.com/azz/pretty-quick)
 可以在你git add之后的代码上通过prettier进行验证和格式化，再commit
+
 **安装** `npm install --D pretty-quick`
 
 ## [husky](https://typicode.github.io/husky/#/)
 可以让你更方便的设置和使用git的钩子
+
 **安装** npm install --D husky
 
 添加pre-commit钩子，在执行提交操作时，先执行prettier的格式验证并自动修改才能提交
