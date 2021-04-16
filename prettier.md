@@ -1,7 +1,7 @@
 当多人或者多团队协作开发时，为了方便维护和管理，需要代码风格保持一致，不过只靠个人自觉很难实现，这时候就需要借助工具了,这里推荐eslint+prettier+husky+pretty-quick实现在开发和提交时自动进行检测
 
 ## [eslint](https://github.com/eslint/eslint/)
-一款代码语法和规则检测工具，能自定义检测规则，且能定义问题级别（0-关闭，1-告警，2-报错），如
+代码语法和规则检测工具，能自定义检测规则，且能定义问题级别（0-关闭，1-告警，2-报错），如
 ```es6
 "rules": {
     "constructor-super": 2,//在constuctor中必须调用super
@@ -60,7 +60,7 @@
 }
 ```
 ## [prettier](https://prettier.io/docs/en/index.html)
-一款格式化美化代码的插件，个人使用的配置如下
+格式化美化代码的插件，提升阅读性，代码维护起来更方便，个人使用的配置如下
 ```js
 module.exports = {
     trailingComma: 'es5',
@@ -72,5 +72,4 @@ module.exports = {
     jsxBracketSameLine: false,
     arrowParens:'always'
 }
-
 ```
