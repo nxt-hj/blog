@@ -15,25 +15,31 @@
 `npm i -D eslint-loader`
 ```es6
 {
-rules:[{
-    test: /\.(js|jsx|ts)$/,
-    enforce: 'pre',
-    use: [
-      {
-        options: {
-          formatter: eslintFormatter,
-          eslintPath: require.resolve('eslint'),
-          // baseConfig: {
-          //     extends: [require.resolve('eslint-config-react-app')],
-          // },
-          ignore: false,
-          useEslintrc: true,
+    rules: [
+        // { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+        {
+            test: /\.(js|jsx|ts)$/,
+            enforce: 'pre',
+            use: [
+                {
+                    options: {
+                        formatter: eslintFormatter,
+                        eslintPath: require.resolve('eslint'),
+                        // baseConfig: {
+                        //     extends: [require.resolve('eslint-config-react-app')],
+                        // },
+                        ignore: false,
+                        useEslintrc: true,
+                    },
+                    loader: require.resolve('eslint-loader'),
+                },
+            ],
+            include: path.resolve(__dirname, 'src'),
+            exclude: [
+                path.resolve(__dirname, 'src/platform/UDS/static'),
+                path.resolve(__dirname, 'src/platform/MRO/static'),
+            ],
         },
-        loader: require.resolve('eslint-loader'),
-      },
-    ],
-    include: path.resolve(__dirname, "src"),
-    exclude: [path.resolve(__dirname, "src/platform/UDS/static"), path.resolve(__dirname, "src/platform/MRO/static")]
-  }]
+    ]
 }
 ```
