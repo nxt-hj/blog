@@ -9,7 +9,9 @@
     ...
  }
 ```
-如果代码不满足条件，则抛出错误，那么现在我们通过eslint-loader把eslint集成到webpack中
+如果代码不满足条件，则抛出错误，如果使用了webpack的ProvidePlugin全局引入，可能直接使用变量eslint会检测报错
+
+那么现在我们通过eslint-loader把eslint集成到webpack中
 
 **安装**
 `npm i -D eslint-loader`
