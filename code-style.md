@@ -70,7 +70,8 @@ module.exports = {
     jsxSingleQuote: true,
     bracketSpacing: true,
     jsxBracketSameLine: false,
-    arrowParens:'always'
+    arrowParens: 'always',
+    printWidth: 120,
 }
 ```
 ## [pretty-quick](https://github.com/azz/pretty-quick)
