@@ -36,7 +36,7 @@
 federation主要用于对其他子应用暴露模块和共享依赖，single-spa主要用于跨framework（react,vue,andular），single-spa虽然也可以暴露模块，但是个人觉得registerApplication
 注册应用的方式是直接异步引用其他子应用文件的，在构建时已经定死了，多个子应用会重复打包，在模块层面上没有完全分离各个子应用
 
-ing:最近这一周才开始去搭建，现在已经实现了多包管理+模块暴露+共享依赖+跨framework应用+跨应用热更新，还有一些eslint格式验证+webpack构建优化+远程模块工厂没有时间去完成，后面会放到
+ing:最近这一周才开始去搭建，现在已经实现了多包管理+模块暴露+共享依赖+跨framework应用+跨应用热更新，还有一些eslint格式验证+webpack构建优化+远程模块工厂没有时间去完成，再完善一些之后会放到
 =>https://github.com/nxt-hj/micro-frontends-demo
 
 ## 思考
