@@ -71,7 +71,7 @@ module.exports = {
     bracketSpacing: true,
     jsxBracketSameLine: false,
     arrowParens: 'always',
-    printWidth: 120,
+    printWidth: 170,
 }
 ```
 ## [pretty-quick](https://github.com/azz/pretty-quick)
