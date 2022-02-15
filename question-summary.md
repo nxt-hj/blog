@@ -14,5 +14,7 @@
     
     `ssh-keygen -t rsa` 一直回车
     
-    `ssh-copy-id domain.com` 根据提示输入登录密码，执行完即可
+    `ssh-copy-id user@domain.com` 根据提示输入登录密码
+    
+    `ssh user@domain.com` 检查是否可直接免密登录，成功即可
     
