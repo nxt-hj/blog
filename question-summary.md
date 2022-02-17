@@ -18,3 +18,15 @@
     
     `ssh user@domain.com` 检查是否可直接免密登录，成功即可
     
+# Cordova
+
+1. 构建apk时卡住，或者提示链接超时
+
+    由于用了一些较旧的插件，gradle的Google仓库指向`https://maven.google.com`，这已经被废弃了，改为`https://dl.google.com/dl/android/maven2`,或者直接使用google()自动解析
+
+     ```java
+     repositories {
+       google()
+       jcenter()
+     }
+     
