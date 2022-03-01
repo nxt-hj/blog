@@ -29,4 +29,13 @@
        google()
        jcenter()
      }
-     
+2. 构建apk时卡住，Download maven-metadata.xml失败
+     添加maven地址
+     ```java
+     repositories {
+       google()
+       jcenter()
+       maven{
+          url 'https://www.jitpack.io'
+       }
+     }
