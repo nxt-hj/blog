@@ -17,4 +17,4 @@
 ```
 # 插件
 
-`Prettier` `Import Cost` `GitLens`
+`Prettier` `Import Cost` `GitLens` `glean`
